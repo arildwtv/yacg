@@ -1,0 +1,30 @@
+{
+  "name": "kodify",
+  "version": "0.1.0",
+  "description": "A framework that propels your spec into realization.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arildwtv/kodify.git"
+  },
+  "keywords": [
+    "specification",
+    "generate",
+    "code",
+    "framework"
+  ],
+  "author": "Arild Wanvik Tvergrov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arildwtv/kodify/issues"
+  },
+  "homepage": "https://github.com/arildwtv/kodify#readme",
+  "dependencies": {
+    "asyncawait": "1.0.3",
+    "mkdirp": "0.5.1",
+    "tinytim": "0.1.1"
+  }
+}
