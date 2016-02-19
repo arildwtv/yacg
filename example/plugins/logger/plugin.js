@@ -9,7 +9,13 @@ module.exports.subscriptions = () => {
         {
             event: 'fileCreated',
             handler(file) {
-                console.log('File created:', file.name);
+                console.log('File created:', file.path);
+            }
+        },
+        {
+            event: 'fileSkipped',
+            handler(file) {
+                console.log('File skipped:', file.path);
             }
         },
         {

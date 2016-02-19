@@ -1,36 +1,35 @@
+var async = require('asyncawait/async');
+var await = require('asyncawait/await');
+
 var capitalize = require('../../../lib/util').capitalize;
 
-module.exports.createFiles = (spec, options, helper) => {
+module.exports.generateSources = async ((spec, options, helper) => {
+
+    var interpolateFileAll = helper.interpolation.interpolateFileAll;
 
     // Map each path to a service (based on first path segment).
     var serviceMap = mapPathsToService(spec.paths);
 
+    // Keep a list of service names.
     var serviceNames = Object.keys(serviceMap);
 
-    var params = serviceNames.map(serviceName => {
+    // Map each service to a template parameter hash.
+    var paramsList = mapServicesToTemplateParams(serviceNames, options);
+
+    // Generate a rest controller per service, interpolating parameters.
+    var restControllerSources = await (interpolateFileAll(__dirname + '/tpl/RestService.tpl', paramsList));
+
+    // Map rest controller sources to source definitions.
+    return restControllerSources.map((content, index) => {
+        var serviceName = serviceNames[index];
+        var path = options.package.replace(/\./g, '/') + '/' + serviceName.toLowerCase();
+
         return {
-            serviceNameCapitalized: capitalize(serviceName),
-            serviceNameLowerCase: serviceName.toLowerCase(),
-            servicePath: serviceName,
-            package: options.package,
-            methods: ''
+            path: path + '/' + capitalize(serviceName) + 'RestService.java',
+            content: content
         };
     });
-
-    var interpolatedFile =
-        helper.interpolation.interpolateFileAll(__dirname + '/tpl/RestController.tpl', params);
-
-    return interpolatedFile.then(contents => {
-        return contents.map((content, index) => {
-            var serviceName = serviceNames[index];
-            var path = options.package.replace(/\./g, '/') + '/' + serviceName.toLowerCase();
-            return {
-                name: path + '/' + capitalize(serviceName) + 'RestController.java',
-                content: content
-            };
-        });
-    });
-};
+});
 
 function mapPathsToService(paths) {
     return Object.keys(paths).reduce((serviceMap, path) => {
@@ -44,4 +43,16 @@ function mapPathsToService(paths) {
 
         return serviceMap;
     }, {});
+}
+
+function mapServicesToTemplateParams(serviceNames, options) {
+    return serviceNames.map(serviceName => {
+        return {
+            serviceNameCapitalized: capitalize(serviceName),
+            serviceNameLowerCase: serviceName.toLowerCase(),
+            servicePath: serviceName,
+            package: options.package,
+            methods: ''
+        };
+    });
 }
