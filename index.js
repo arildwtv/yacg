@@ -1,1 +1,1 @@
-module.exports = require('./lib/kodify');
+module.exports = require('./lib/yacg');
