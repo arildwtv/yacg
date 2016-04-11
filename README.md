@@ -1,3 +1,3 @@
-# Codify
+# YACG
 
-A framework that propels your specifications into realization.
+A framework that propels your specification into realization.
