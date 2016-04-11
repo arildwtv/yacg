@@ -17,7 +17,7 @@
     "framework"
   ],
   "author": "Arild Wanvik Tvergrov",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/arildwtv/kodify/issues"
   },
