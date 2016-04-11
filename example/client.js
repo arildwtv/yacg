@@ -1,4 +1,4 @@
-var kodify = require('../index').kodify;
+var yacg = require('../index').yacg;
 
 var spec = require('./spec.json');
 
@@ -28,9 +28,9 @@ var keepPatterns = [
 //    /HealthConfig.java$/
 ];
 
-// Run kodify.
-kodify({ spec, plugins, options })
-//    .then(k => k.validateSpec(validator))
-    .then(k => k.generateSources())
-    .then(k => k.writeFiles(outputDir, keepPatterns))
+// Run YACG.
+yacg({ spec, plugins, options })
+//    .then(y => y.validateSpec(validator))
+    .then(y => y.generateSources())
+    .then(y => y.writeFiles(outputDir, keepPatterns))
     .catch(err => console.error('Something went wrong during code generation', err, err.stack));
