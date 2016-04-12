@@ -25,7 +25,6 @@
   "dependencies": {
     "events": "1.1.0",
     "mkdirp": "0.5.1",
-    "path": "0.12.7",
-    "tinytim": "0.1.1"
+    "path": "0.12.7"
   }
 }
