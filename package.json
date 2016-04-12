@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/arildwtv/kodify.git"
+    "url": "git+https://github.com/arildwtv/yacg.git"
   },
   "keywords": [
     "specification",
@@ -19,9 +19,9 @@
   "author": "Arild Wanvik Tvergrov",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/arildwtv/kodify/issues"
+    "url": "https://github.com/arildwtv/yacg/issues"
   },
-  "homepage": "https://github.com/arildwtv/kodify#readme",
+  "homepage": "https://github.com/arildwtv/yacg#readme",
   "dependencies": {
     "events": "1.1.0",
     "mkdirp": "0.5.1",
