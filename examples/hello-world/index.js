@@ -21,7 +21,7 @@ var yacgInput = {
 // Require our hello world validator.
 var helloValidator = require('./hello-validator');
 
-yacg.initiate(yacgInput)
+yacg.initialize(yacgInput)
     // Validate the specification.
     .then(yacg.validateSpec(helloValidator))
 
