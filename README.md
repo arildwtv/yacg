@@ -2,13 +2,37 @@
 
 <blockquote>A framework that propels your specification into realization.</blockquote>
 
+## What...?
+
+_TL;DR: See Usage below._
+
+__YACG__ stands for Yet Another Code Generator - and yes, that's a very clever reference to
+[YACC](https://en.wikipedia.org/wiki/Yacc). :smirk:
+
+Essentially, YACG is a small Node module that facilitates auto-generation of code -  or any other type of file, for
+that matter.
+
+YACG is like any other function: You put something in, you get something out. However, YACG is specialized in that the
+output will always be a source file, or a list of source files.
+
+Also, YACG has conveniently built-in functionality for creating actual files based on your generated sources. And, of
+course, both Windows and *NIX environments are supported.
+
+The input to YACG - what we like to call the _specification_ of your generated code - is all up to you. It may be a
+string, a number, an array, an object, a [Swagger](http://swagger.io/) specification - it may be whatever you need it
+to be. For all we care, it could be `null` or `undefined`.
+
+For further details, check Usage below, or our [examples](https://github.com/arildwtv/yacg/tree/master/examples).
+
+Happy auto-generating!
+
 ## Install
 
 ```
 $ npm install yacg --save
 ```
 
-__Note__ that YACG uses Promises extensively. Be sure to include a 
+:exclamation: __Note__ that YACG uses Promises extensively. Be sure to include a 
 [polyfill](https://github.com/stefanpenner/es6-promise) if your runtime does not support Promises.
 
 ## Usage
