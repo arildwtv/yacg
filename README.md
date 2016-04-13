@@ -1,12 +1,15 @@
-# YACG
+# YACG _[yak-ee]_
+
+<img src="https://raw.githubusercontent.com/arildwtv/yacg/master/media/yacg.png" alt="YACG" />
 
 <blockquote>A framework that propels your specification into realization.</blockquote>
+
 
 ## What...?
 
 _TL;DR: See Usage below._
 
-__YACG__ stands for Yet Another Code Generator - and yes, that's a very clever reference to
+__YACG__ (pronounced _[yak-ee]_) stands for Yet Another Code Generator - and yes, that's a very clever reference to
 [YACC](https://en.wikipedia.org/wiki/Yacc). :smirk:
 
 Essentially, YACG is a small Node module that facilitates auto-generation of code -  or any other type of file, for
