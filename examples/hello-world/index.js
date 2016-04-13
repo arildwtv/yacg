@@ -7,21 +7,17 @@ var yacg = require('../../index');
 var outputDir = './hello/text-files';
 
 // Register the YACG input.
-var yacgInput = {
+var spec = { name: 'YACG Fan' };
 
-    // The specification, in this case a simple string with a name.
-    spec: { name: 'YACG Fan' },
-
-    // The plugins registered with YACG.
-    plugins: [
-        require('./hello-plugin')
-    ]
-};
+// The plugin(s) registered with YACG.
+var plugins = [
+    require('./hello-plugin')
+];
 
 // Require our hello world validator.
 var helloValidator = require('./hello-validator');
 
-yacg.initialize(yacgInput)
+yacg.initialize(spec, plugins)
     // Validate the specification.
     .then(yacg.validateSpec(helloValidator))
 
